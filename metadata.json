@@ -1,0 +1,5 @@
+{
+  "name": "Interactive Dot Matrix",
+  "description": "An interactive, shimmering dot matrix that responds to mouse movements. Dots wiggle and shift in hue when the cursor passes over them, creating a mesmerizing visual effect. Includes a settings panel to customize the animation parameters.",
+  "requestFramePermissions": []
+}

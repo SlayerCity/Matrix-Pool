@@ -1,0 +1,45 @@
+
+<div class="relative w-full h-screen overflow-hidden">
+  <app-dot-matrix
+    class="absolute inset-0"
+    [density]="settings().density"
+    [dotSize]="settings().dotSize"
+    [interactionRadius]="settings().interactionRadius"
+    [repelForce]="settings().repelForce"
+    [returnSpeed]="settings().returnSpeed"
+    [damping]="settings().damping"
+    [hueShift]="settings().hueShift"
+    [baseHue]="settings().baseHue"
+  ></app-dot-matrix>
+
+  <button
+    (click)="toggleSettings()"
+    class="fixed top-4 right-4 z-20 p-3 rounded-full bg-slate-700/50 text-slate-300 hover:bg-slate-600/70 hover:text-white transition-all duration-300 backdrop-blur-sm"
+    aria-label="Toggle settings"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9.594 3.94c.09-.542.56-1.007 1.11-.95.542.057 1.007.56 1.066 1.11.061.55-.283 1.178-.81 1.458-.503.284-1.178.284-1.68 0-.527-.28-.87-.908-.81-1.458zM12 17.25c.51 0 .98-.295 1.205-.758l.075-.165a3.375 3.375 0 00-6.56 0l.075.165A2.25 2.25 0 0112 17.25z"
+      />
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 3c-1.153 0-2.26.15-3.32.43A12.75 12.75 0 003 12a12.75 12.75 0 006.68 8.57c1.06.28 2.167.43 3.32.43s2.26-.15 3.32-.43A12.75 12.75 0 0021 12a12.75 12.75 0 00-6.68-8.57A12.75 12.75 0 0012 3zm-3.75 7.5a.75.75 0 000 1.5h7.5a.75.75 0 000-1.5h-7.5z"
+      />
+    </svg>
+  </button>
+
+  <app-settings-panel
+    [isOpen]="isSettingsOpen()"
+    [(settings)]="settings"
+  ></app-settings-panel>
+</div>
